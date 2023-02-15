@@ -1,0 +1,40 @@
+{% extends 'landing/base.html' %}
+{% load static %}
+
+{% block content %}
+<section id="team" class="team section-bg">
+    <div class="container" style="padding-top: 25px;">
+
+        <div class="section-title">
+            <br>
+            <h2>LEADERBOARD</h2>
+        </div>
+        <table class="table table-hover table-dark">
+            <thead>
+                <tr>
+                    <th scope="col">Player</th>
+                    <th scope="col">Handle</th>
+                    <th scope="col">Score</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for object in participant %}
+                <tr>
+                    <td>{{ object.name}}</td>
+                    <td>@{{ object.insta}}</td>
+                    <td>{{ object.score}}</td>
+                </tr>
+                {% empty %}
+                No entries available.
+
+                {% endfor %}
+
+
+            </tbody>
+        </table>
+
+    </div>
+</section><!-- End Team Section -->
+
+
+{% endblock content %}
